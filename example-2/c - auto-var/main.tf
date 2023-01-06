@@ -9,3 +9,5 @@ output "instance_arn" {
 output "instance_tags" {
   value = data.aws_instance.my_instance.tags
 }
+
+
