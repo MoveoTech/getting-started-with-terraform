@@ -1,5 +1,8 @@
-# Getting Started With Terraform
+## The purpose of this repo is to provide hands-on examples for using terraform, without previous knowledge.
 
+<br>
+
+# Getting Started With Terraform
 Terraform is an open source tool for building, changing, and versioning infrastructure safely and efficiently. In this guide, we will walk through the basics of getting started with Terraform and explain how it can be used to manage infrastructure as code.
 
 ## Prerequisites
@@ -26,3 +29,4 @@ Now that you have the basic workflow down, you can start using Terraform to mana
 2. Explore the Terraform Registry to find modules and resources that you can use in your configurations.
 
 3. Check out the Terraform Best Practices guide for tips on how to write efficient and maintainable configurations.
+
