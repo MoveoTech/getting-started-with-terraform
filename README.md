@@ -1,16 +1,18 @@
-## The purpose of this repo is to provide hands-on examples for using terraform, without previous knowledge.
+# Getting Started With Terraform
+The purpose of this repo is to provide hands-on examples for using terraform, without previous knowledge required.
+
+Terraform is an open source tool for building, changing, and versioning infrastructure safely and efficiently. In this guide, we will walk through the basics of getting started with Terraform and explain how it can be used to manage infrastructure as code.
 
 <br>
-
-# Getting Started With Terraform
-Terraform is an open source tool for building, changing, and versioning infrastructure safely and efficiently. In this guide, we will walk through the basics of getting started with Terraform and explain how it can be used to manage infrastructure as code.
 
 ## Prerequisites
 Before you can start using Terraform, you will need to:
 
-**Install Terraform** - Follow the instructions in the Terraform documentation to install Terraform on your machine.
+**Install Terraform** - Follow [this guide](guides/Installation.README.md) in order to install terraform quickly.
 
-**Set up an account with a cloud provider** - Terraform can be used to manage infrastructure on a variety of cloud platforms, including AWS, Azure, and GCP. Follow the instructions in the Terraform documentation to set up an account with your desired provider.
+**Configure AWS in your terminal** - Use the AWS CLI for configuring your default AWS profile. For more details, see [this guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config).
+
+<br>
 
 ## Getting Started
 **Create a configuration file** - A configuration file is a file that contains the instructions for building and managing your infrastructure. It is written in the HashiCorp Configuration Language (HCL), which is a declarative language designed to be easy to read and write.
