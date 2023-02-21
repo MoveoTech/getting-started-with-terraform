@@ -5,30 +5,61 @@ Terraform is an open source tool for building, changing, and versioning infrastr
 
 <br>
 
+# Table of Contents
+1. [Prerequisites](#prerequisites)
+2. [Install Terraform](#installing-terraform)
+3. [Using this Guide](#using-this-guide)
+<br>
+
+---
+<br>
+
 ## Prerequisites
 Before you can start using Terraform, you will need to:
 
-**Install Terraform** - Follow [this guide](guides/Installation.README.md) in order to install terraform quickly.
+* **Install Terraform** - Jump to [installing terraform](#installing-terraform) section in order to install terraform quickly.
 
-**Configure AWS in your terminal** - Use the AWS CLI for configuring your default AWS profile. For more details, see [this guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config).
+* **Configure AWS in your terminal** - Use the AWS CLI for configuring your default AWS profile. For more details, see [this guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config).
+
+* **Configure SSH connection with GitHub** - If you intend to use Terragrunt, you will most probably need this.
 
 <br>
 
-## Getting Started
-**Create a configuration file** - A configuration file is a file that contains the instructions for building and managing your infrastructure. It is written in the HashiCorp Configuration Language (HCL), which is a declarative language designed to be easy to read and write.
+---
+<br>
 
-**Initialize Terraform** - Run the terraform init command to initialize Terraform and download the necessary plugins.
+## Installing Terraform
+The fastest & and most recommended way of installing terraform, is by running a docker image with terraform installed on it
 
-**Plan the infrastructure** - Run the terraform plan command to see a preview of the infrastructure that will be created.
+The docker image is called *alpine/terragrunt*. The official image page is available in [this link](https://hub.docker.com/r/alpine/terragrunt)
 
-**Apply the changes** - Run the terraform apply command to apply the changes and create the infrastructure.
+#### **The command for running this image is:**
+<br>
 
-## Next Steps
-Now that you have the basic workflow down, you can start using Terraform to manage your infrastructure. Here are some suggestions for next steps:
+```
+docker run -ti --rm -v $HOME/.aws:/root/.aws -v ${HOME}/.ssh:/root/.ssh -v `pwd`:/apps alpine/terragrunt:0.12.16 bash
+```
+<br>
 
-1. Read the Terraform documentation to learn more about the various features and options available.
+#### **Important Notes:**
+1. You don't have to pull this image in advance. By running this command, docker will look for this image locally, and pull it if needed.
+2. The command above will copy the `.aws` folder from your computer into the container's volume, that means that your aws profile will be available within the container, **including the default aws profile**
+3. The command above will copy the `.ssh` folder from your computer into the container's volume, you will need ssh for referencing terraform modules in GitHub when you run terragrunt. For more details, see [Configuring SSH](./configuring%20ssh.README.md)
 
-2. Explore the Terraform Registry to find modules and resources that you can use in your configurations.
+<br>
 
-3. Check out the Terraform Best Practices guide for tips on how to write efficient and maintainable configurations.
+---
+<br>
+
+## Using this Guide
+
+This guide is divided to different examples, each example demonstrates a different Terraform feature.   
+Here are the steps for trying out each example:
+
+1. Open your terminal.
+2. Run the docker command from the [Install Terraform](#installing-terraform) section.
+3. `cd` into the example's directory
+4. Run Terraform/Terragrunt commands (depending on the example's code)
+
+
 
