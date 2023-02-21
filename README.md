@@ -8,7 +8,7 @@ Terraform is an open source tool for building, changing, and versioning infrastr
 # Table of Contents
 1. [Prerequisites](#prerequisites)
 2. [Install Terraform](#installing-terraform)
-3. [Using this Guide](#using-this-guide)
+3. [Usage](#usage)
 <br>
 
 ---
@@ -21,7 +21,7 @@ Before you can start using Terraform, you will need to:
 
 * **Configure AWS in your terminal** - Use the AWS CLI for configuring your default AWS profile. For more details, see [this guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config).
 
-* **Configure SSH connection with GitHub** - If you intend to use Terragrunt, you will most probably need this.
+* **Configure SSH connection with GitHub** - If you intend to use Terragrunt, you will most probably need this. Follow [this guide](guides/configuring%20ssh.README.md) for more details
 
 <br>
 
@@ -44,14 +44,14 @@ docker run -ti --rm -v $HOME/.aws:/root/.aws -v ${HOME}/.ssh:/root/.ssh -v `pwd`
 #### **Important Notes:**
 1. You don't have to pull this image in advance. By running this command, docker will look for this image locally, and pull it if needed.
 2. The command above will copy the `.aws` folder from your computer into the container's volume, that means that your aws profile will be available within the container, **including the default aws profile**
-3. The command above will copy the `.ssh` folder from your computer into the container's volume, you will need ssh for referencing terraform modules in GitHub when you run terragrunt. For more details, see [Configuring SSH](./configuring%20ssh.README.md)
+3. The command above will copy the `.ssh` folder from your computer into the container's volume, you will need ssh for referencing terraform modules in GitHub when you run terragrunt. For more details, see [Configuring SSH](guides/configuring%20ssh.README.md)
 
 <br>
 
 ---
 <br>
 
-## Using this Guide
+## Usage
 
 This guide is divided to different examples, each example demonstrates a different Terraform feature.   
 Here are the steps for trying out each example:
@@ -60,6 +60,9 @@ Here are the steps for trying out each example:
 2. Run the docker command from the [Install Terraform](#installing-terraform) section.
 3. `cd` into the example's directory
 4. Run Terraform/Terragrunt commands (depending on the example's code)
+<br>
+<br>
 
+![Demo](guides/assets//usage.gif)
 
 
